@@ -1,0 +1,31 @@
+{
+  "name": "MyGame",
+  "globIgnorePaths": ["**/*.spec.luau", "**/__tests__/**"],
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "Shared": { "$path": "src/shared" },
+      "Packages": { "$path": "Packages" }
+    },
+    "ServerScriptService": {
+      "Server": { "$path": "src/server" },
+      "ServerPackages": { "$path": "ServerPackages" }
+    },
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "Client": { "$path": "src/client" }
+      }
+    },
+    "Workspace": {
+      "$properties": { "StreamingEnabled": true }
+    },
+    "Lighting": {
+      "$properties": { "Technology": "Future" }
+    }
+  },
+  "syncbackRules": {
+    "ignorePaths": ["Packages/**", "ServerPackages/**"],
+    "syncCurrentCamera": false,
+    "syncUnscriptable": true
+  }
+}

@@ -1,0 +1,75 @@
+name: build-test-deploy
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      config_only:
+        description: "Only publish config/live.json (no place publish)"
+        type: boolean
+        default: false
+
+env:
+  DEFS_URL: https://luau-lsp.pages.dev/type-definitions/globalTypes.None.d.luau
+
+jobs:
+  static:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: CompeyDev/setup-rokit@v0.2.1
+        with: { cache: true }
+      - run: wally install
+      - run: rojo sourcemap default.project.json --output sourcemap.json
+      - run: selene src
+      - run: stylua --check src
+      - run: curl -sSfL "$DEFS_URL" -o globalTypes.d.luau
+      - run: >
+          luau-lsp analyze --platform roblox --sourcemap sourcemap.json
+          --definitions @roblox=globalTypes.d.luau --base-luaurc .luaurc
+          --ignore "Packages/**" --ignore "ServerPackages/**" --ignore "DevPackages/**" src
+      # Enable when you adopt Asphalt (add `asphalt = "jacktabscode/asphalt@2.0.2"` to rokit.toml, copy asphalt.toml):
+      # - run: asphalt sync cloud --dry-run   # fails if assets/ changed but the lockfile was not re-synced
+      #   env: { ASPHALT_API_KEY: "${{ secrets.ROBLOX_API_KEY }}" }
+
+  cloud-tests:
+    needs: static
+    runs-on: ubuntu-latest
+    concurrency: { group: luau-exec-test-place, cancel-in-progress: false }   # <=10 incomplete tasks per place
+    steps:
+      - uses: actions/checkout@v4
+      - uses: CompeyDev/setup-rokit@v0.2.1
+        with: { cache: true }
+      - run: wally install
+      - run: rojo build test.project.json --output test.rbxl
+      - run: python3 scripts/rbx.py test test.rbxl tasks/runTests.luau
+        env:
+          ROBLOX_API_KEY: ${{ secrets.ROBLOX_API_KEY }}
+          UNIVERSE_ID: ${{ vars.TEST_UNIVERSE_ID }}
+          PLACE_ID: ${{ vars.TEST_PLACE_ID }}
+
+  deploy:
+    needs: cloud-tests
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: production            # add required reviewers here = human approval gate
+    concurrency: { group: deploy-prod, cancel-in-progress: false }
+    env:
+      ROBLOX_API_KEY: ${{ secrets.ROBLOX_API_KEY }}
+      UNIVERSE_ID: ${{ vars.PROD_UNIVERSE_ID }}
+      PLACE_ID: ${{ vars.PROD_PLACE_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: CompeyDev/setup-rokit@v0.2.1
+        with: { cache: true }
+      - run: wally install
+      - if: ${{ !inputs.config_only }}
+        run: rojo build default.project.json --output prod.rbxl
+      - if: ${{ !inputs.config_only }}
+        run: python3 scripts/rbx.py publish prod.rbxl
+      - if: ${{ !inputs.config_only }}
+        run: python3 scripts/rbx.py restart 10      # outdated servers only, 10-min bleed-off
+      - run: python3 scripts/rbx.py config config/live.json GradualRollout

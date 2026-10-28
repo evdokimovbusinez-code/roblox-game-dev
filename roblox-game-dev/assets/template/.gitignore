@@ -1,0 +1,15 @@
+# Wally output (restored by `wally install`)
+/Packages/*
+/ServerPackages/*
+/DevPackages/*
+!/Packages/.gitkeep
+!/ServerPackages/.gitkeep
+# Build outputs and generated files
+*.rbxl
+*.rbxlx
+*.rbxl.lock
+*.rbxlx.lock
+sourcemap.json
+globalTypes.d.luau
+# Secrets: never commit Open Cloud API keys
+.env

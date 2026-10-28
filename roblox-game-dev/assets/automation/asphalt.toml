@@ -1,0 +1,12 @@
+#:schema https://raw.githubusercontent.com/jackTabsCode/asphalt/refs/heads/main/schema.json
+[creator]
+type = "group"      # or "user"
+id = 0              # your group or user id; the API key must belong to this creator
+
+[codegen]
+style = "nested"
+strip_extensions = true
+
+[inputs.assets]
+path = "assets/**/*"
+output_path = "src/shared"

@@ -1,0 +1,4 @@
+std = "roblox"
+# For reproducible CI: run `selene generate-roblox-std` once and commit roblox.yml, then uncomment:
+# roblox-std-source = "pinned"
+exclude = ["Packages/*", "ServerPackages/*", "DevPackages/*", "analysis/*"]

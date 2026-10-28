@@ -1,0 +1,20 @@
+{
+  "name": "yourgame-test",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "Shared": { "$path": "src/shared" },
+      "Packages": { "$path": "Packages" },
+      "DevPackages": { "$path": "DevPackages" },
+      "Tests": { "$path": "tests" }
+    },
+    "ServerScriptService": {
+      "$properties": { "LoadStringEnabled": true },
+      "Server": { "$path": "src/server" },
+      "ServerPackages": { "$path": "ServerPackages" }
+    },
+    "StarterPlayer": {
+      "StarterPlayerScripts": { "Client": { "$path": "src/client" } }
+    }
+  }
+}

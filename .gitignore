@@ -1,0 +1,5 @@
+.DS_Store
+*.rbxl.lock
+sourcemap.json
+node_modules/
+__pycache__/
