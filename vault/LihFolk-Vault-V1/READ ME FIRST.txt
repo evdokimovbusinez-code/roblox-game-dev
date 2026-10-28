@@ -1,0 +1,56 @@
+ROBLOX GAME DEVELOPMENT VAULT - READ ME FIRST
+==============================================
+
+New here? "HOW TO INSTALL.txt" is the short 4-step version of this file.
+
+You only need ONE free program: Obsidian (https://obsidian.md).
+Nothing else to install. No plugins, no accounts, no setup.
+
+1. Unzip this folder somewhere short, for example C:\Vaults\
+   (very long folder paths can make Windows fail to unzip some files).
+
+2. Open Obsidian and choose "Open folder as vault", then pick this folder.
+   If Obsidian asks whether to trust the vault author, either answer is fine:
+   the vault works fully without turning anything on.
+
+3. Open "00 Start Here". It has a map of all sections and reading paths
+   for beginners, programmers, artists, animators, designers and more.
+
+Handy keys inside Obsidian:
+   Ctrl+O        jump to any note by name
+   Ctrl+Shift+F  search every note
+   Ctrl+G        open the graph (how every topic connects)
+
+No Obsidian? Every note is a plain .md text file. Any text editor works,
+and AI tools (Claude Code, Cursor and others) can read the folder directly.
+
+Two downloads:
+   - Lite: all the notes, images and code (small). Start here.
+   - Full: the same plus about 43 GB of free CC0 textures, HDRIs, 3D models
+     and kits (sections 20 and 30). Only needed if you want the assets.
+
+Using AI (Claude Code, Cursor and others):
+   - Point the AI at this folder; it reads AGENTS.md / CLAUDE.md and VAULT_INDEX.md
+     and uses the notes by itself whenever the task is about Roblox.
+   - Claude Code, nothing to install: open THIS folder in Claude Code (or the Code tab
+     of the Claude app). The ten Roblox skills and six Obsidian skills ship in the
+     hidden .claude/skills folder and load automatically, with CLAUDE.md.
+   - Want the skills in your OTHER projects too (e.g. your game's folder)? Run
+     install-ai.ps1 (Windows) or install-ai.sh (Mac/Linux) once. Add -Global / --global
+     to also tell Claude about the vault in every project.
+   - Claude app chat or claude.ai (no folder access): upload the zips in
+     "31 AI Skills for Roblox/upload" under Settings > Capabilities > Skills, and add
+     the notes you need to a Project.
+
+The "Celestial Vault" add-on (animated sky, welcome page, daily journal, moon
+calendar) is included and switched on. The first time you open the vault, Obsidian
+asks "Do you trust the author of this vault?": click "Trust author and enable
+plugins" to get it. Chose restricted mode by mistake? Settings > Community plugins >
+Turn on community plugins, then enable "Celestial Vault". Without it, the vault
+still has the same colours and welcome page through CSS snippets.
+
+Accuracy: written in October 2026. Facts marked "Roblox docs" were checked
+against official docs at that time. Code is reviewed but mostly not run, so test
+it in Studio. Unconfirmed claims are listed in "Open Questions - Whole Vault".
+Assets in sections 20 and 30 are CC0: free for any use, no credit needed.
+License: see LICENSE.md (notes CC BY 4.0, assets CC0, Check-UI MIT).

@@ -98,3 +98,7 @@ cp -r roblox-game-dev ~/.claude/skills/
 ## Лицензия
 
 Лицензия не указана — все права у автора.
+
+## База знаний LihFolk Vault V1 / Knowledge base
+
+Папка `vault/LihFolk-Vault-V1/` — неизменённая копия **LihFolk Vault V1** (автор LihFolk, лицензия [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); сторонние части — CC0/MIT, см. `vault/LihFolk-Vault-V1/LICENSE.md`). Скилл использует её как индексированную базу: карта — `roblox-game-dev/references/vault-map.md`, загрузка нужных заметок — `roblox-game-dev/scripts/fetch_vault.sh "<раздел>/<заметка>.md"`.

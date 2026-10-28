@@ -1,0 +1,14 @@
+USE THIS VAULT WITH YOUR AI
+
+1. Unzip it to  C:\Vaults
+
+2. Open your AI (Claude Code, Cursor, Copilot...) and paste this:
+
+   My Roblox notes are in C:\Vaults\LihFolk Vault V1.
+   Read AGENTS.md in that folder and set yourself up to use
+   these notes for all my Roblox work.
+
+3. Done. Go make some 4 ccu games n make me proud
+
+Using Claude chat on the web? Go to Settings > Capabilities > Skills and
+upload the zips from the "upload" folder inside "31 AI Skills for Roblox".

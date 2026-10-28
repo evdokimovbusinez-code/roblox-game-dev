@@ -1,0 +1,53 @@
+HOW TO INSTALL THE ROBLOX GAME DEVELOPMENT VAULT
+================================================
+
+Takes about 5 minutes. Free. Works on Windows, Mac and Linux.
+
+
+STEP 1 - Get Obsidian (free)
+   Go to https://obsidian.md, download it, and install it like any other app.
+
+
+STEP 2 - Unzip the vault
+   Windows: right-click the zip > "Extract All..." > choose a short place,
+            for example C:\Vaults  (long folder paths can break the unzip).
+   Mac:     double-click the zip.
+
+   Which zip?
+   - Lite (small): all the notes. Pick this if you are not sure.
+   - Full (about 43 GB): the notes plus free textures, HDRIs and 3D models.
+     Needs about 90 GB of free space while it unzips.
+
+
+STEP 3 - Open it in Obsidian
+   1. Open Obsidian.
+   2. Click "Open folder as vault".
+   3. Pick the folder you just unzipped (the one with "00 Start Here.md" inside).
+   4. Obsidian asks "Do you trust the author of this vault?"
+      Click "Trust author and enable plugins" to get the animated sky and welcome page.
+      (Restricted mode works too. You just get a plainer look.)
+
+
+STEP 4 - Start reading
+   Open "00 Start Here". It has a map of every section and reading paths for
+   beginners, scripters, artists, animators and designers.
+
+   Handy keys:  Ctrl+O        find a note by name   (Cmd+O on Mac)
+                Ctrl+Shift+F  search everything     (Cmd+Shift+F on Mac)
+                Ctrl+G        open the graph        (Cmd+G on Mac)
+
+
+THAT'S IT.
+
+--------------------------------------------------------------------------
+Something went wrong?
+   - "Path too long" or missing files when unzipping: unzip to C:\Vaults instead.
+   - The first open feels slow: Obsidian is indexing about 800 notes. Wait a minute.
+   - No colours or sky: Settings > Community plugins > turn on community plugins,
+     then enable "Celestial Vault".
+   - Opened the wrong folder: pick the folder that contains "00 Start Here.md",
+     not the folder above it.
+
+Optional: using it with AI (Claude Code, Cursor and others)
+   Open this folder in your AI tool. It finds AGENTS.md and CLAUDE.md by itself.
+   More detail is in "READ ME FIRST.txt".
